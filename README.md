@@ -193,9 +193,7 @@ Copy code
 Open:
 index.html
 
-yaml
-Copy code
-or use VS Code Live Server.
+use VS Code Live Server.
 
 ### No dependencies required  
 This project is entirely front-end and runs in any modern browser.
