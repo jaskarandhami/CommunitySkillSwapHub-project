@@ -187,10 +187,7 @@ Copy code
 ## 9. Installation & Usage
 
 ### Step 1: Clone the repository
-git clone <https://github.com/jaskarandhami/CommunitySkillSwapHub-project.git>
 
-makefile
-Copy code
 
 ### Step 2: Run the project
 Open:
