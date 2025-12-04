@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSwap Hub</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar glass fade-drop">
+        <div class="logo">SkillSwap Hub</div>
+        <ul class="nav-links">
+            <li data-page="home">Home</li>
+            <li data-page="explore">Explore</li>
+            <li data-page="ai-tools">AI Tools</li>
+            <li data-page="share">Share</li>
+            <li data-page="profile">Profile</li>
+            <li data-page="about">About</li>
+            <li data-page="contact">Contact</li>
+            <li><a href="login.html" class="login-link">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <section id="home" class="page active fade-in">
+        <div class="hero glass">
+            <h1 class="fade-up">Welcome to SkillSwap Community</h1>
+            <p class="fade-up-delayed">Share your skills, discover resources, and explore AI tools.</p>
+            <button class="primary-btn fade-up-delayed" data-page="explore">Explore Now</button>
+        </div>
+    </section>
+
+    <!-- EXPLORE PAGE -->
+    <section id="explore" class="page hidden fade-in">
+        <h2 class="section-title">Explore Resources</h2>
+
+        <div class="explore-controls">
+            <input type="text" id="searchBox" class="input glass" placeholder="Search resources...">
+            <select id="filterCategory" class="input glass">
+                <option value="All">All</option>
+                <option value="Coding">Coding</option>
+                <option value="Art">Art</option>
+                <option value="AI">AI</option>
+            </select>
+        </div>
+
+        <div id="resourceList" class="card-container"></div>
+    </section>
+
+    <!-- AI TOOLS PAGE -->
+    <section id="ai-tools" class="page hidden fade-in">
+        <h2 class="section-title">AI Tools for Hobbies</h2>
+        <div id="aiTools" class="card-container"></div>
+    </section>
+
+    <!-- SHARE RESOURCE PAGE -->
+    <section id="share" class="page hidden fade-in">
+        <h2 class="section-title">Share a Resource</h2>
+
+        <form id="shareForm" class="glass form-box">
+            <label>Title <span class="required">*</span></label>
+            <input type="text" id="resourceTitle" class="input glass" required>
+
+            <label>Link <span class="required">*</span></label>
+            <input type="url" id="resourceLink" class="input glass" required>
+
+            <label>Description <span class="required">*</span></label>
+            <textarea id="resourceDesc" class="input glass" required></textarea>
+
+            <label>Category <span class="required">*</span></label>
+            <select id="resourceCategory" class="input glass">
+                <option value="Coding">Coding</option>
+                <option value="Art">Art</option>
+                <option value="AI">AI</option>
+            </select>
+
+            <button type="submit" class="primary-btn">Add Resource</button>
+        </form>
+    </section>
+
+    <!-- PROFILE PAGE -->
+    <section id="profile" class="page hidden fade-in">
+        <h2 class="section-title">Your Profile</h2>
+
+        <div class="profile-box glass">
+            <label>Full Name <span class="required">*</span></label>
+            <input type="text" id="fullName" class="input glass">
+
+            <label>Bio</label>
+            <textarea id="bioText" class="input glass"></textarea>
+
+            <label>Your Skills / Hobbies <span class="required">*</span></label>
+            <input type="text" id="skills" class="input glass">
+
+            <label>Photo <span class="required">*</span></label>
+            <input type="file" id="photoUpload" class="input glass">
+
+            <button id="saveProfile" class="primary-btn">Save Profile</button>
+        </div>
+
+        <div id="profilePreview" class="profile-preview"></div>
+    </section>
+
+    <!-- ABOUT PAGE -->
+    <section id="about" class="page hidden fade-in">
+        <h2 class="section-title">About</h2>
+        <div class="glass about-box">
+            <p>
+                SkillSwap Hub is a platform that helps learners share community-built resources 
+                and explore AI-powered tools to enhance creativity and productivity.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT PAGE -->
+    <section id="contact" class="page hidden fade-in">
+        <h2 class="section-title">Contact Us</h2>
+
+        <form id="contactForm" class="glass form-box">
+            <label>Email <span class="required">*</span></label>
+            <input type="email" id="contactEmail" class="input glass" required>
+
+            <label>Message <span class="required">*</span></label>
+            <textarea id="contactMsg" class="input glass" required></textarea>
+
+            <button type="submit" class="primary-btn">Send</button>
+        </form>
+
+        <div id="contactResponse"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer glass fade-up">
+        <p>© 2025 SkillSwap Hub</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>

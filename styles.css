@@ -1,0 +1,316 @@
+/* ---------------------------------------------------
+   GLOBAL SETTINGS
+-----------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4c0070, #8e2de2, #4c0070);
+    background-size: 200% 200%;
+    animation: bgMove 18s ease infinite;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Smooth animated gradient */
+@keyframes bgMove {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+a { color: white; text-decoration: none; }
+
+
+/* ---------------------------------------------------
+   GLASSMORPHISM ELEMENT
+-----------------------------------------------------*/
+.glass {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 20px;
+}
+
+
+/* ---------------------------------------------------
+   NAVBAR
+-----------------------------------------------------*/
+.navbar {
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links li {
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links li:hover {
+    transform: scale(1.1);
+    color: #ffb4ff;
+}
+
+.login-link {
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+
+/* ---------------------------------------------------
+   PAGE TRANSITIONS
+-----------------------------------------------------*/
+.page {
+    width: 100%;
+    padding: 40px;
+    min-height: 85vh;
+    display: none;
+}
+
+.page.active { display: block; }
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Navbar drop fade */
+.fade-drop {
+    animation: fadeDrop 0.7s ease;
+}
+
+@keyframes fadeDrop {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade-up for hero content */
+.fade-up {
+    animation: fadeUp 0.8s ease;
+}
+.fade-up-delayed {
+    animation: fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ---------------------------------------------------
+   HERO SECTION
+-----------------------------------------------------*/
+.hero {
+    text-align: center;
+    padding: 70px 30px;
+    margin-top: 30px;
+}
+
+.hero h1 {
+    font-size: 45px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+
+/* ---------------------------------------------------
+   BUTTONS
+-----------------------------------------------------*/
+.primary-btn {
+    padding: 14px 36px;
+    border: none;
+    background: #ffb3ff;
+    border-radius: 12px;
+    font-size: 17px;
+    color: #40004e;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.primary-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 15px #ffb3ff;
+}
+
+
+/* ---------------------------------------------------
+   INPUTS & FORMS
+-----------------------------------------------------*/
+.input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.input:focus {
+    box-shadow: 0 0 10px #d277ff;
+}
+
+textarea {
+    min-height: 90px;
+}
+
+.required {
+    color: #ffc9ff;
+    font-weight: 700;
+}
+
+
+/* ---------------------------------------------------
+   CARD CONTAINERS
+-----------------------------------------------------*/
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.resource-card,
+.ai-card {
+    padding: 20px;
+    border-radius: 16px;
+    transition: 0.25s ease;
+}
+
+.resource-card:hover,
+.ai-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 18px rgba(255, 184, 255, 0.4);
+}
+
+
+/* ---------------------------------------------------
+   COMMENT BOX UNDER CARDS
+-----------------------------------------------------*/
+.comment-box {
+    margin-top: 15px;
+}
+
+.comment-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+}
+
+.comment-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    background: #ffd6ff;
+    color: #4c0061;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.comment-btn:hover {
+    transform: scale(1.05);
+}
+
+
+/* ---------------------------------------------------
+   FORM CONTAINERS
+-----------------------------------------------------*/
+.form-box {
+    max-width: 550px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+/* ---------------------------------------------------
+   PROFILE PREVIEW
+-----------------------------------------------------*/
+.profile-preview {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 15px;
+}
+
+.profile-preview img {
+    width: 130px;
+    height: 130px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+
+/* ---------------------------------------------------
+   ABOUT / CONTACT
+-----------------------------------------------------*/
+.about-box {
+    max-width: 700px;
+    margin: auto;
+}
+
+
+/* ---------------------------------------------------
+   FOOTER
+-----------------------------------------------------*/
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* ---------------------------------------------------
+   RESPONSIVE DESIGN
+-----------------------------------------------------*/
+@media (max-width: 768px) {
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    body {
+        padding-bottom: 60px;
+    }
+}
